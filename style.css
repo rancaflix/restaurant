@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&family=Inter+Tight&display=swap');
+
+body {
+    margin: 0;
+    background-image: url(https://www.futuro.cl/wp-content/uploads/2022/10/the-bear-fx-web.jpg);
+    backdrop-filter: blur(3px);
+    min-height: 100%;
+}
+
+#content {
+    width: 99vw;
+    font-family: 'Inter Tight', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+:root {
+    --main-bg-color: rgba(0, 0, 0, 0.9);
+    --main-div-color: rgba(49, 33, 33, 0.9);
+    --contrast-color: white;
+}
+
+/* Header and insides */
+
+#header {
+    width: 99vw;
+    height: 20vh;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    text-align: center;
+    background-color: var(--main-bg-color);
+    color: var(--contrast-color);
+}
+
+#banner {
+    font-weight: 500;
+    font-size: xxx-large;
+    font-family: 'Goblin One', cursive;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    padding: 2rem 0 1rem 0;
+}
+
+#tabs {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: xx-large;
+}
+
+.tabelement {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.tabelement::first-letter {
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 800px){
+    #header {
+        height: 33vh;
+        grid-template-rows: 1fr 1fr;
+    }
+    #tabs {
+        flex-direction: column;
+    }
+    .tabelement {
+        margin: 0.2rem;
+    }
+    .tabelement:nth-child(-n+2) {
+        border-bottom: 0.1px solid white;
+    }
+}
+
+/* Content in the middle */
+
+#mid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    width: 100%;
+    min-height: 75vh;
+}
+
+#welcomediv, #menudiv, #contactdiv {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    width: 75%;
+    background-color: var(--main-div-color);
+    color: var(--contrast-color);
+    align-self: center;
+    justify-self: center;
+}
+
+#welcomediv img {
+    margin-top: 1rem;
+    width: 50%;
+    border: 1px solid white;
+}
+
+.menu-section {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.menu-section > p {
+    grid-area: 1/1/2/4;
+    font-size: x-large;
+}
+
+.sectiontitle {
+    font-weight: 900;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.section {
+    font-size: large;
+}
+
+.dish-section {
+    display: grid;
+}
+
+.dish-photo {
+    width: 80%;
+    border: 1px solid white;
+    justify-self: center;
+    align-self: center;
+}
+
+#contactsquare > img {
+    width: 66%;
+    border: 1px solid white;
+}
+
+@media screen and (max-width: 800px){ 
+    #welcomediv, #menudiv, #contactdiv{
+        margin: 0.5rem;
+        padding: 0.5rem;
+        width: 90%;
+    }
+    
+    #welcomediv img {
+        width: 75%;
+    }
+
+    .menu-section {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+    }
+    .menu-section > p {
+        grid-area: 1/1/1/1;
+    }
+    #contactsquare > img {
+        width: 85%;
+    }
+}
+
+/* Footer and insides */
+#footer {
+    width: 99vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg-color);
+    color: var(--contrast-color);
+}
+
+#footer > p, #footer > a {
+    display: inline;
+    padding: 0.3rem;
+}
